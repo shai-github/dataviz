@@ -6,4 +6,4 @@ Replicated first chart from "Four Charts that Reveal Tom Brady's Greatness" by J
 
 ## healthcare
 
-Replicated chart from "Obamacare, in its First Big Test as Safety Net, Is Holding Up So Far" by Margot Sanger-Katz, Sarah Kliff, and Quoctrung Bui. Proper rendering requires use of the Libre Franklin Light and Lora fonts, which are provided in the "fonts" folder.
+Replicated chart from "Obamacare, in its First Big Test as Safety Net, Is Holding Up So Far" by Margot Sanger-Katz, Sarah Kliff, and Quoctrung Bui. Proper rendering requires use of the Libre Franklin and Lora fonts, which are provided in the "fonts" folder.
