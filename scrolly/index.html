@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            font-family: 'Libre Franklin Light', sans-serif;
+        }
+
+        svg {
+            overflow: visible;
+        }
+
+        h1 {
+            margin: 0px 0px;
+            font-size: 26px;
+            font-weight: lighter;
+            font-family: 'Libre Franklin Light', sans-serif;
+        }
+
+        .x .tick line {
+            stroke: rgba(0, 0, 0, 1);
+        }
+
+        .y .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .x .domain {
+            display: none;
+        }
+
+        .y .domain {
+            display: none;
+        }
+
+        .y .tick text {
+            font-size: 13px;
+            font-weight: 100;
+            fill: #333;
+        }
+
+        .x .tick text {
+            font-size: 13px;
+            font-weight: 100;
+            fill: #333;
+        }
+
+        .label {
+            font-size: 18.5px;
+            font-weight: 300;
+        }
+
+        .smallLabel {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+        .axis-label {
+            font-size: 13px;
+            font-weight: lighter;
+            text-transform: uppercase;
+        }
+
+        .source {
+            font-size: 12.4px;
+            max-width: 600px;
+            margin: 0px 180px;
+            line-height: 18px;
+            color: rgba(0, 0, 0, 0.4)
+        }
+
+        .legend { 
+            list-style: none; 
+            margin: 0px 0px 0px 0px;
+        }
+
+        .legend li { 
+            float: right; 
+            margin-right: 8px;
+            font-family: 'Libre Franklin Light', sans-serif;
+            font-weight: lighter;
+            font-size: 12.5px;
+            display: inline;
+        }
+
+        .legend span { 
+            float: left; 
+            width: 12.5px; 
+            height: 12.5px; 
+            margin: 1px 2.5px; 
+        }
+
+        .legend .fifthblock { 
+            background-color: #E0E0E0; 
+        }
+
+        .legend .fourthblock { 
+            background-color: #90A4AE; 
+        }
+
+        .legend .thirdblock {
+            background-color: #5C6BC0; 
+        }
+
+        .legend .secondblock { 
+            background-color: #F06292; 
+        }
+
+        .legend .firstblock { 
+            background-color: #FDD835; 
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .filler {
+            height: 8rem;
+            text-align: center;
+        }
+
+        .filler h2 {
+            font-family: 'Lora', sans-serif;
+            font-weight: 500;
+            font-size: 38.5px;
+            margin: 20px;
+        }
+
+
+        .filler p {
+            font-family: 'Libre Franklin Light', sans-serif;
+            font-weight: lighter;
+            font-size: 16px;
+            text-align: left;
+            margin: 10px auto;
+            line-height: 1.2;
+            max-width: 700px
+            
+        }
+
+        #scrolly-overlay .scrolly {
+            font-family: 'Libre Franklin Light', sans-serif;
+            font-size: 22px;
+            max-width: 60rem;
+            margin: 0rem auto;
+            padding: 0rem;
+            position: relative;
+
+        }
+
+        #scrolly-overlay .scrolly article {
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #scrolly-overlay .scrolly article .step {
+            min-height: 112.5vh;
+            margin-bottom: 10rem;
+        }
+
+        #scrolly-overlay .scrolly article .step:last-of-type {
+            margin-bottom: 0;
+        }
+
+        #scrolly-overlay .scrolly article .step.is-active p {
+            background-color: #1F1F1E;
+        }
+
+        #scrolly-overlay .scrolly article .step p {
+            margin: 0;
+            padding: 1.5rem;
+            text-align: center;
+            font-family: 'Libre Franklin Light', sans-serif;
+            font-size: 22.5px;
+            font-weight: lighter;
+            background-color: #56564c;
+            transition: background-color 250ms ease-in-out;
+            color: #f4f4f4;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky {
+            position: sticky;
+            width: 100%;
+            height:95.5vh;
+            margin: 0;
+            top: 20vh;
+
+            left: 0;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky .svg-chart {
+            position: absolute;
+            width: 10%;
+            height: 100%;
+            transition: width 1s ease-in-out;
+        }
+
+        .spacer {
+            height: 1500px;
+        }
+    </style>
+
+</head>
+<body>
+    <section class='filler'>
+
+        <h2>The Changing Health Insurance Landscape</h2>
+        <p>
+            <em>Scroll to see how the insurance landscape has changed since the Affordable Care Act took effect</em>
+        </p>
+        <p2>
+            
+        </p2>
+
+    </section>
+
+    <section id='scrolly-overlay'>
+
+        <div class='scrolly'>
+
+            <figure class='sticky'>
+                <div class="chart-container">
+                    <header class="flex">
+                        <h1 class="headline">
+                            Health Insurance by Income: 2009
+                        </h1>
+                        <ul class="legend">
+                            <li><span class="fifthblock"></span style = > Other</li>
+                            <li><span class="fourthblock"></span> Military</li>
+                            <li><span class="thirdblock"></span> CHIP</li>
+                            <li><span class="secondblock"></span> Subsidized Exchange</li>
+                            <li><span class="firstblock"></span> Medicare and Medicaid</li>
+                        </ul>
+                    </header>
+                    <svg width="1050px" height="562px"></svg>
+                    <p class="source">
+                    Note: The income measure used here is 
+                    <span style= "color:#000000">
+                        disposable income
+                    </span>
+                    , which is defined as market income plus cash transfers from the government and noncash benefits like food stamps 
+                    and public housing. It excludes taxes, out-of-pocket medical spending, insurance premiums and other expenses. There 
+                    have been small changes in the census questionnaire between the two survey dates. Source: Current Population Survey, 
+                    analysis by Matt Bruenig</p>
+                <svg class='svg-chart'></svg>
+
+            </figure>
+
+            <article>
+                <div class='step' data-width='10%' data-index='0', yod="2009">
+                    <p>Change in healthcare coverage sources by income between 2009 and 2020</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+</body>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
+
+<script>
+
+let width = 962;
+let height = 498;
+
+let svg = d3.select("body")
+    .select("svg")
+
+d3.csv("healthcare-disposable-inc.csv").then(function (data) {
+
+    let margin = { top: 10, right: 10, bottom: 0, left: 0 };
+
+    let sel_cols = [
+        "Medicaid",
+        "Medicare",
+        "Medicare+Medicaid",
+        "Employer",
+        "Uninsured",
+        "Direct Purchase",
+        "Subsidized Exchange",
+        "CHIP",
+        "Military",
+        "Other"]
+
+    let sel_colors = [
+        "#f44336", // "Medicaid",
+        "#FF9800", // "Medicare",
+        "#FDD835", // "Medicare+Medicaid",
+        "#FFF8E1", // "Employer",
+        "#26A69A", // "Uninsured",
+        "#4DD0E1", // "Direct Purchase",
+        "#F06292", // "Subsidized Exchange",
+        "#5C6BC0", // "CHIP",
+        "#90A4AE", // "Military",
+        "#E0E0E0"  // "Other"
+    ]
+
+    let year_state = 2009;
+
+    let d2020 = data.filter(d => d.year == 2020)
+    let d2009 = data.filter(d => d.year == 2009)
+
+    let series2020 = d3.stack().keys(sel_cols)(d2020);
+    let series2009 = d3.stack().keys(sel_cols)(d2009);
+
+    let color = d3.scaleOrdinal()
+        .domain(sel_cols)
+        .range(sel_colors)
+
+    let x = d3.scaleLinear()
+        .domain([0, 100])
+        .range([margin.left, width])
+
+    let y = d3.scaleLinear()
+        .domain([0, 1])
+        .range([height - margin.bottom, margin.top])
+
+    let area = d3.area()
+        .x(d => x(d.data.Percentile))
+        .y0(d => y(d[0]))
+        .y1(d => y(d[1]))
+
+    let xAxisSettings = d3.axisBottom(x)
+        .tickSize(6)
+        .tickPadding(6)
+        .tickValues([5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95])
+        .tickFormat(d3.format(".0f"))
+
+    let xAxis = svg.append("g")
+        .attr("class", "x axis")
+        .call(xAxisSettings)
+        .call(g => g.selectAll(".domain").remove())
+        .attr("transform", "translate(0," + height + ")")
+
+    let yAxisSettings = d3.axisLeft(y)
+        .tickValues([.2, .4, .6, .8])
+        .tickSize(6)
+        .tickPadding(4)
+        .tickFormat(d3.format(".0%"))
+
+    let yAxis = svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxisSettings)
+        .call(g => g.selectAll(".domain").remove())     
+
+    let stacks = svg.append("g")
+        .attr("class", "stacks")
+
+    let hed = d3.select(".headline")
+    let employer = svg.append("text")
+                        .attr("class", "label")
+                        .attr("x", 828)
+                        .attr("y", 266)
+                        .text("Employer")
+
+    let medicaid = svg.append("text")
+                        .attr("class", "label")
+                        .attr("x", 44)
+                        .attr("y", 430)
+                        .text("Medicaid")
+                        .style("fill", "white")
+
+    let uninsured = svg.append("text")
+                        .attr("class", "label")
+                        .attr("x", 54)
+                        .attr("y", 122)
+                        .text("Uninsured")
+                        .style("fill", "white")
+                        
+    let medicare = svg.append("text")
+                        .attr("class", "label")
+                        .attr("x", 77)
+                        .attr("y", 330)
+                        .text("Medicare")
+
+    stacks
+        .selectAll("path")
+        .data(series2009)
+        .join("path")
+        .attr("class", d => d.key)
+        .attr("fill", d => color(d.key))
+        .attr("d", area)
+        
+    svg.append("text")
+        .attr("class", "smallLabel")
+        .attr("x", 970)
+        .attr("y", 38)
+        .text("Direct Purchase")
+
+    svg.append("text")
+        .attr("class", "axis-label")
+        .attr("x", width / 2)
+        .attr("y", height + 50)
+        .text("income percentile")
+        .attr("text-anchor", "middle")
+
+    function update() {
+        if (year_state == 2009) {
+            year_state = 2020
+            dance(series2020, 818, 232, 30, 422, 164, 94, 48, 282)
+            hed.html("Health Insurance by Income: 2020")
+        } else {
+            year_state = 2009
+            dance(series2009, 828, 266, 44, 430, 54, 122, 77, 330)
+            hed.html("Health Insurance by Income: 2009")
+        }
+    }
+
+    function dance(series, x1, y1, x2, y2, x3, y3, x4, y4) {
+        stacks
+            .selectAll("path")
+            .data(series)
+            .join("path")
+            .attr("class", d => d.key)
+            .transition()
+            .duration(1300)
+            .ease(d3.easeCubic)
+            .attr("fill", d => color(d.key))
+            .attr("d", area)
+
+        employer
+            .transition()
+            .duration(1300)
+            .ease(d3.easeCubic)
+            .attr("class", "label")
+            .attr("x", x1)
+            .attr("y", y1)
+            .text("Employer")
+
+        medicaid
+            .transition()
+            .duration(1300)
+            .ease(d3.easeCubic)
+            .attr("class", "label")
+            .attr("x", x2)
+            .attr("y", y2)
+            .text("Medicaid")
+            .style("fill", "white")
+
+        uninsured
+            .transition()
+            .duration(1300)
+            .ease(d3.easeCubic)
+            .attr("class", "label")
+            .attr("x", x3)
+            .attr("y", y3)
+            .text("Uninsured")
+            .style("fill", "white")
+
+        medicare
+            .transition()
+            .duration(1300)
+            .ease(d3.easeCubic)
+            .attr("class", "label")
+            .attr("x", x4)
+            .attr("y", y4)
+            .text("Medicare")
+        
+    }
+
+    const container = d3.select('#scrolly-overlay');
+    const stepSel = container.selectAll('.step'); 
+
+    function updateChart(index) {
+        const sel = container.select(`[data-index='${index}']`);
+        const width = sel.attr('data-width');
+        const yod = parseInt(sel.attr('yod'));
+        stepSel.classed('is-active', (d, i) => i === index);
+        update(yod);
+    }
+
+    function init() {
+
+        enterView({ 
+            selector: stepSel.nodes(),
+            offset: 0.5, 
+            enter: el => { 
+                const index = +d3.select(el).attr('data-index'); 
+                updateChart(index);
+            },
+            exit: el => {
+                let index = +d3.select(el).attr('data-index');
+                index = Math.max(0, index - 1);
+                updateChart(index);
+            }
+        });
+
+    }
+
+    init();
+
+})
+
+</script>

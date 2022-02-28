@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Libre Franklin Thin', sans-serif;
+        }
+
+        svg {
+            overflow: visible;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 30px;
+            font-family: 'Libre Franklin Thin', sans-serif;
+            padding-bottom: 16px;
+            margin: 0px 150px;
+            font-weight: 500
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 20px;
+            padding-bottom: 50px;
+            margin: 0px 150px
+        }
+
+        .source {
+            font-weight:lighter;
+            font-size:12.5px;
+            padding-top: 25px;
+            color: rgba(0, 0, 0, 0.4);
+            margin: 0px 150px
+        }
+
+        .pop-up {
+            position: absolute; 
+            border: 1px solid black;
+            text-align: left;
+            border-radius: 0px;
+            line-height: 1.2;
+            width: 225px;
+            pointer-events: none;
+            background-color: white;
+            padding: 10px;
+            color: black;
+            font-size: 14px;
+            font-weight: lighter
+        }
+
+    </style>
+    <!-- add your script blocks at the end -->
+
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Child Poverty in the United States
+        </h1>
+        <h2>
+            Estimated number of children living under poverty in each US county as of 2019
+        </h2>
+
+        <svg width="1050px" height="525px">
+
+        </svg>
+        <div class="pop-up">
+        </div>
+        <p class="source">
+            Note: Estimated number of children living under poverty in 2019 published by the US Census 
+            Bureau in the release of the 2014-2018 American Community Survey 5-year estimates. Of the 3,233 
+            counties for which data was collected, 13 counties were ommitted.
+        </p>
+    </div>
+</body>
+
+
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- load topojson script -->
+<script src="https://unpkg.com/topojson@3"></script>
+
+<script>
+    console.log({ d3 })
+    console.log({ topojson })
+
+    // //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+    Promise.all([ //waits for all the data to load, then when loaded will return it all in one array called res
+        d3.json('bubble-topo.json'),
+    ])
+        .then(ready)
+        .catch((err) => {
+            console.log(err);
+        });
+
+    function ready(res) {
+        console.log(res[0])
+        let raw = res[0]
+
+        let county = topojson.feature(raw, raw.objects.county);
+        let state = topojson.feature(raw, raw.objects.state);
+
+        let width = 1050;
+        let height = 500;
+
+        console.log(county, state)
+
+        let svg = d3.select("body").select("svg")
+
+        let myProjection = d3.geoAlbersUsa()
+            .fitSize([width, height], county)
+
+        //path function
+        let path = d3.geoPath()
+            .projection(myProjection)
+
+        let innerlines = topojson.mesh(raw, raw.objects.state, function (a, b) {
+            return a != b;
+        });
+
+
+        svg
+            .selectAll(".states")
+            .data(state.features)
+            .join("path")
+            .attr("d", path)
+            .style("fill", "#eee")
+            .style("stroke", "none")
+            .style("pointer-events", "none")
+
+
+        let states = svg
+            .append("path")
+            .attr("d", path(innerlines))
+            .style("fill", "none")
+            .style("stroke", "#333")
+            .style("stroke-width", 1)
+            .style("pointer-events", "none")
+            
+        let popup = d3.select(".pop-up");
+
+        let counties = svg
+            .selectAll(".counties")
+            .data(county.features.filter(d => !isNaN(path.centroid(d)[0])))
+            .join("circle")
+            .attr("r", d => {
+                return Math.sqrt(d.properties.pop_18_in_poverty/300)
+            })
+            .attr("cx", d => {
+                return path.centroid(d)[0]
+            })
+            .attr("cy", d => {
+                return path.centroid(d)[1]
+            })
+            .attr("class", function (d) { return "counties c-" + d.properties.GEOID })
+            .style("fill", "orange")
+            .style("stroke", "white")
+            .style("stroke-width", .5)
+            .style("opacity", .55)
+
+            counties.on("mouseover", (event, d) => {
+
+                counties
+                    .style("stroke", "white")
+                    .style("stroke-width", .5)
+                    .style("fill", "orange")
+                    .style("opacity", .60)
+
+                svg.select(".c-" + d.properties.GEOID)
+                    .style("stroke", "orange")
+                    .style("stroke-width", 2)
+                    .style("fill", "white")
+                    .style("opacity", 1)
+                    .raise()
+
+                //let lang = "County Name: " + d.properties.Geo_QName + "</br>" + "</br>" + "Children in Poverty: " + d.properties.pop_18_in_poverty
+                let lang = "In <b>" + d.properties.Geo_QName + "</b> there are <b>" + d.properties.pop_18_in_poverty + "</b> children living under poverty"
+
+                popup
+                    .style("opacity", 0.95)
+                    .style("left", (event.x + 10) + "px")
+                    .style("top", (event.y - 20) + "px")
+                    .html(lang)
+
+            })
+
+            counties.on("mouseout", (event, d) => {
+                counties
+                    .style("stroke", "white")
+                    .style("stroke-width", .5)
+                    .style("fill", "orange")
+                    .style("opacity", .60)
+
+                popup
+                    .style("opacity", 0)
+
+            })
+            
+    }
+
+
+
+
+
+
+
+
+</script>
