@@ -7,7 +7,6 @@
         .chart-container {
             max-width: 1050px;
             margin: 0 auto;
-            /* auto centers the div */
             font-family: 'Libre Franklin Thin', sans-serif;
         }
 
@@ -55,7 +54,6 @@
         }
 
     </style>
-    <!-- add your script blocks at the end -->
 
 </head>
 
@@ -81,19 +79,14 @@
     </div>
 </body>
 
-
-<!-- we're using d3 version 6 (the latest version) for all out work -->
 <script src="https://d3js.org/d3.v6.min.js"></script>
-
-<!-- load topojson script -->
 <script src="https://unpkg.com/topojson@3"></script>
 
 <script>
     console.log({ d3 })
     console.log({ topojson })
 
-    // //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-    Promise.all([ //waits for all the data to load, then when loaded will return it all in one array called res
+    Promise.all([ 
         d3.json('bubble-topo.json'),
     ])
         .then(ready)
@@ -118,7 +111,6 @@
         let myProjection = d3.geoAlbersUsa()
             .fitSize([width, height], county)
 
-        //path function
         let path = d3.geoPath()
             .projection(myProjection)
 
@@ -181,7 +173,6 @@
                     .style("opacity", 1)
                     .raise()
 
-                //let lang = "County Name: " + d.properties.Geo_QName + "</br>" + "</br>" + "Children in Poverty: " + d.properties.pop_18_in_poverty
                 let lang = "In <b>" + d.properties.Geo_QName + "</b> there are <b>" + d.properties.pop_18_in_poverty + "</b> children living under poverty"
 
                 popup
@@ -205,12 +196,5 @@
             })
             
     }
-
-
-
-
-
-
-
 
 </script>
