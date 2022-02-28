@@ -137,7 +137,8 @@
             .style("stroke-width", 1)
             .style("pointer-events", "none")
             
-        let popup = d3.select(".pop-up");
+        let popup = d3.select(".pop-up")
+            .style("opacity", 0)
 
         let counties = svg
             .selectAll(".counties")
