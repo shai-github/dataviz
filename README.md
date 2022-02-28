@@ -17,4 +17,4 @@ Franklin font, which is provided in the "fonts" folder.
 ## scrolly
 
 Replication of the healthcare chart noted above with transitions between years programmed in a scrollytelling rig. Proper rendering
-requires use of the Libre Franklin and Lora fonots, which are are provided in the "fonts" folder.
+requires use of the Libre Franklin and Lora fonots, which are provided in the "fonts" folder.
