@@ -25,7 +25,7 @@
 
         h2 {
             font-weight: 300;
-            font-size: 20px;
+            font-size: 18.5px;
             padding-bottom: 50px;
             margin: 0px 150px
         }
@@ -173,7 +173,7 @@
                     .style("opacity", 1)
                     .raise()
 
-                let lang = "In <b>" + d.properties.Geo_QName + "</b> there are <b>" + d.properties.pop_18_in_poverty + "</b> children living under poverty"
+                let lang = "In <b>" + d.properties.Geo_QName + "</b> there are <b>" + d.properties.pop_18_in_poverty.toLocaleString('en') + "</b> children living under poverty"
 
                 popup
                     .style("opacity", 0.95)
