@@ -69,3 +69,7 @@ a, a:visited, a:active {
 .footer {
   text-align: center;
 }
+
+svg {
+  overflow: visible;
+}

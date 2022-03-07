@@ -1,4 +1,3 @@
-
 function bubbleChart() {
   var width = 1200;
   var height = 600;
@@ -11,7 +10,7 @@ function bubbleChart() {
     4: { x: 315, y: 400 },
     3: { x: 470, y: 400 },
     2: { x: 625, y: 400 },
-    1: { x: 780, y: 400 }
+    1: { x: 780, y: 400 },
   };
 
   var yearsTitleX = {
@@ -19,7 +18,7 @@ function bubbleChart() {
     'L-Income': 255,
     'M-Income': 480,
     'H-Income': 685,
-    'VH-Income': 880
+    'VH-Income': 880,
   };
 
   var forceStrength = 0.03;
@@ -28,11 +27,14 @@ function bubbleChart() {
   var bubbles = null;
   var nodes = [];
 
+  var yearToSplitOn = null;
+
   function charge(d) {
     return -Math.pow(d.radius, 2.0) * forceStrength;
   }
 
-  var simulation = d3.forceSimulation()
+  var simulation = d3
+    .forceSimulation()
     .velocityDecay(0.2)
     .force('x', d3.forceX().strength(forceStrength).x(center.x))
     .force('y', d3.forceY().strength(forceStrength).y(center.y))
@@ -41,15 +43,20 @@ function bubbleChart() {
 
   simulation.stop();
 
-  var fillColor = d3.scaleOrdinal()
+  var fillColor = d3
+    .scaleOrdinal()
     .domain([3, 2, 1])
     .range(['#faa443', '#d8765b', '#5ec4b4']);
 
   function createNodes(rawData) {
+    console.log(rawData);
 
-    var maxAmount = d3.max(rawData, function (d) { return +d.AF2LE001; });
+    var maxAmount = d3.max(rawData, function (d) {
+      return +d.AF2LE001;
+    });
 
-    var radiusScale = d3.scalePow()
+    var radiusScale = d3
+      .scalePow()
       .exponent(0.5)
       .range([2, 14])
       .domain([0, maxAmount]);
@@ -61,44 +68,63 @@ function bubbleChart() {
         value: +d.AF2LE001,
         name: d.TRACTA,
         group: d.THREECITY,
-        year: d.INC1970,
+        1970: d.INC1970,
+        1980: d.INC1980,
+        1990: d.INC1990,
+        2000: d.INC2000,
+        2010: d.INC2010,
+        2016: d.INC2016,
         x: Math.random() * 1100,
-        y: Math.random() * 700
+        y: Math.random() * 700,
       };
     });
 
-    myNodes.sort(function (a, b) { return b.value - a.value; });
+    myNodes.sort(function (a, b) {
+      return b.value - a.value;
+    });
+
+    console.log('nodes', myNodes);
 
     return myNodes;
   }
 
   var chart = function chart(selector, rawData) {
-
     nodes = createNodes(rawData);
-    console.log(nodes);
 
-    svg = d3.select(selector)
+    svg = d3
+      .select(selector)
       .append('svg')
       .attr('width', width)
-      .attr('height', height);
+      .attr('height', height)
+      .style('overflow', 'display');
 
-    bubbles = svg.selectAll('.bubble')
-      .data(nodes, function (d) { return d.id; });
+    bubbles = svg.selectAll('.bubble').data(nodes, function (d) {
+      return d.id;
+    });
 
-    var bubblesE = bubbles.enter().append('circle')
+    var bubblesE = bubbles
+      .enter()
+      .append('circle')
       .classed('bubble', true)
       .attr('r', 0)
-      .attr('fill', function (d) { return fillColor(d.group); })
-      .attr('stroke', function (d) { return d3.rgb(fillColor(d.group)).darker(); })
+      .attr('fill', function (d) {
+        return fillColor(d.group);
+      })
+      .attr('stroke', function (d) {
+        return d3.rgb(fillColor(d.group)).darker();
+      })
       .attr('stroke-width', 1)
       .on('mouseover', showDetail)
       .on('mouseout', hideDetail);
 
     bubbles = bubbles.merge(bubblesE);
 
-    bubbles.transition()
+    bubbles
+      .transition()
       .duration(2000)
-      .attr('r', function (d) { return d.radius; });
+      .attr('r', function (d) {
+        return d.radius;
+      });
 
     simulation.nodes(nodes);
 
@@ -107,12 +133,16 @@ function bubbleChart() {
 
   function ticked() {
     bubbles
-      .attr('cx', function (d) { return d.x; })
-      .attr('cy', function (d) { return d.y; });
+      .attr('cx', function (d) {
+        return d.x;
+      })
+      .attr('cy', function (d) {
+        return d.y;
+      });
   }
 
   function nodeYearPos(d) {
-      return yearCenters[d.year].x;
+    return yearCenters[d[yearToSplitOn]].x;
   }
 
   function groupBubbles() {
@@ -123,7 +153,8 @@ function bubbleChart() {
     simulation.alpha(1).restart();
   }
 
-  function splitBubbles() {
+  function splitBubbles(year) {
+    yearToSplitOn = year;
     showYearTitles();
 
     simulation.force('x', d3.forceX().strength(forceStrength).x(nodeYearPos));
@@ -136,46 +167,59 @@ function bubbleChart() {
   }
 
   function showYearTitles() {
-
     var yearsData = d3.keys(yearsTitleX);
-    var years = svg.selectAll('.year')
-      .data(yearsData);
+    var years = svg.selectAll('.year').data(yearsData);
 
-    years.enter().append('text')
+    years
+      .enter()
+      .append('text')
       .attr('class', 'year')
-      .attr('x', function (d) { return yearsTitleX[d]; })
+      .attr('x', function (d) {
+        return yearsTitleX[d];
+      })
       .attr('y', 40)
       .attr('text-anchor', 'middle')
-      .text(function (d) { return d; });
+      .text(function (d) {
+        return d;
+      });
   }
 
   function showDetail(d) {
-
     d3.select(this).attr('stroke', 'black');
 
-    var content = '<span class="name">Census Tract: </span><span class="value">' +
-                  d.name +
-                  '</span><br/>' +
-                  '<span class="name">Population: </span><span class="value">' +
-                  addCommas(d.value) +
-                  '</span><br/>'
+    // const years = ["1970", "1980", "1990", "2000", "2010", "2016"];
+
+    var content =
+      '<span class="name">Census Tract: </span><span class="value">' +
+      d.name +
+      '</span><br/>' +
+      '<span class="name">Population: </span><span class="value">' +
+      addCommas(d.value) +
+      '</span><br/>';
+
+    // years.forEach(function (year) {
+    //   content +=
+    //     '<span class="name">' +
+    //     year +
+    //     ': </span><span class="value">' +
+    //     d[year] +
+    //     "</span><br/>";
+    // });
 
     tooltip.showTooltip(content, d3.event);
   }
 
   function hideDetail(d) {
-
-    d3.select(this)
-      .attr('stroke', d3.rgb(fillColor(d.group)).darker());
+    d3.select(this).attr('stroke', d3.rgb(fillColor(d.group)).darker());
 
     tooltip.hideTooltip();
   }
 
   chart.toggleDisplay = function (displayName) {
-    if (displayName ==='year') {
-      splitBubbles();
-    } else {
+    if (displayName === 'all') {
       groupBubbles();
+    } else {
+      splitBubbles(displayName);
     }
   };
 
@@ -196,14 +240,14 @@ function setupButtons() {
   d3.select('#toolbar')
     .selectAll('.button')
     .on('click', function () {
-      d3.selectAll('.button')
-        .classed('active', false);
+      d3.selectAll('.button').classed('active', false);
 
       var button = d3.select(this);
 
       button.classed('active', true);
 
       var buttonId = button.attr('id');
+      console.log(buttonId);
 
       myBubbleChart.toggleDisplay(buttonId);
     });
