@@ -5,6 +5,8 @@ a, a:visited, a:active {
 .container {
   max-width: 900px;
   margin: auto;
+  font-size: 18;
+  font-family: "Libre Franklin Thin", sans-serif
 }
 
 .button {

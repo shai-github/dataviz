@@ -1,25 +1,25 @@
 
 function bubbleChart() {
   var width = 1200;
-  var height = 700;
+  var height = 600;
 
   var tooltip = floatingTooltip('gates_tooltip', 240);
-  var center = { x: width / 2, y: height / 2 };
+  var center = { x: 470, y: height / 2 };
 
   var yearCenters = {
-    5: { x: width / 5, y: 600 },
-    4: { x: 380, y: 600 },
-    3: { x: width / 2, y: 600 },
-    2: { x: 800, y: 600 },
-    1: { x: 980, y: 600 }
+    5: { x: 160, y: 400 },
+    4: { x: 315, y: 400 },
+    3: { x: 470, y: 400 },
+    2: { x: 625, y: 400 },
+    1: { x: 780, y: 400 }
   };
 
   var yearsTitleX = {
-    'Very Low-Income': width / 5,
-    'Low-Income': 380,
-    'Middle-Income': width / 2,
-    'High-Income': 800,
-    'Very High-Income': 1050
+    'VL-Income': 70,
+    'L-Income': 255,
+    'M-Income': 480,
+    'H-Income': 685,
+    'VH-Income': 880
   };
 
   var forceStrength = 0.03;
@@ -51,7 +51,7 @@ function bubbleChart() {
 
     var radiusScale = d3.scalePow()
       .exponent(0.5)
-      .range([2, 16])
+      .range([2, 14])
       .domain([0, maxAmount]);
 
     var myNodes = rawData.map(function (d) {
@@ -62,8 +62,8 @@ function bubbleChart() {
         name: d.TRACTA,
         group: d.THREECITY,
         year: d.INC1970,
-        x: Math.random() * 1200,
-        y: Math.random() * 800
+        x: Math.random() * 1100,
+        y: Math.random() * 700
       };
     });
 
