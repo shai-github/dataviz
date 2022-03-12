@@ -2,5 +2,39 @@ h1 {
     font-family: "Lora", sans-serif;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 5px
+}
+
+h5 {
+    font-family: "Libre Franklin Thin", sans-serif;
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px
+}
+
+.title-container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.multiples-source {
+    font-family: "Libre Franklin Thin"
+}
+
+.bars-source {
+    font-family: "Libre Franklin Thin"
+}
+
+.map-source {
+    font-family: "Libre Franklin Thin"
+}
+
+.tree-source {
+    font-family: "Libre Franklin Thin"
+}
+
+.bubble-source {
+    font-family: "Libre Franklin Thin"
 }

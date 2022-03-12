@@ -20,7 +20,15 @@
 
     <body>
         <section>
-            <h1 class="title">A Shrinking Middle Class in an Increasingly Polarized City</h1>
+            <div class="title-container">
+                <h1 class="title">A Shrinking Middle Class in an Increasingly Polarized City</h1>
+                <h5>
+                    <em>
+                        Since the Great Recession, the middle class has been losing ground across U.S. metropolitan areas.
+                        In Chicago, the erosion of the middle class started well before the economic downturn in 2008.
+                    </em>
+                </h5>
+            </div>
         </section>
         <section>
             <div class="chart-container" style="text-align:center">
@@ -134,15 +142,15 @@
                             <li><span class="citytwo"></span> City Two</li>
                             <li><span class="cityone"></span> City One</li>
                         </ul>
-                        <img id="cityzero" src="svg/city0.svg">
-                        <img id="cityone" src="svg/city1.svg">
-                        <img id="citytwo" src="svg/city2.svg">
-                        <img id="citythree" src="svg/city3.svg">
+                        <img id="city0svg" src="svg/city0.svg">
+                        <img id="city1svg" src="svg/city1.svg">
+                        <img id="city2svg" src="svg/city2.svg">
+                        <img id="city3svg" src="svg/city3.svg">
                     </div>
                 </figure>
     
                 <article>
-                    <div id='cityzero' class='step' data-width='10%' data-index='6'>
+                    <div id='city0svg' class='step' data-width='10%' data-index='6'>
                         <div class="frame">
                             <p>
                                 <b>The Three Cities</b>
@@ -151,7 +159,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id='cityone' class='step' data-width='90%' data-index='7'>
+                    <div id='city1svg' class='step' data-width='90%' data-index='7'>
                         <div class="frame">
                             <p>
                                 <b>City One</b>
@@ -160,7 +168,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id='citytwo' class='step' data-width='50%' data-index='8'>
+                    <div id='city2svg' class='step' data-width='50%' data-index='8'>
                         <div class="frame">
                             <p>
                                 <b>City Two</b>
@@ -169,7 +177,7 @@
                             </p>
                         </div>
                     </div>
-                    <div id='citythree' class='step' data-width='50%' data-index='9'>
+                    <div id='city3svg' class='step' data-width='50%' data-index='9'>
                         <div class="frame">
                             <p>
                                 <b>City Three</b>
@@ -183,7 +191,7 @@
         </section>
         <section>
             <div class="chart-container">
-                <div id="tree"></div>
+                <div id="tree" width="1050px" height="562px"></div>
             </div>
         </section>
         <section class='filler'>
