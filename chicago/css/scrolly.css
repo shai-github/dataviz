@@ -212,3 +212,7 @@ img {
     background-color: #5ac8c8;  
     border: 1px solid #000;
 }
+
+mini-spacer {
+    height: 2px
+}
