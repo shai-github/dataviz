@@ -12,22 +12,31 @@ h5 {
     text-align: center;
     font-weight: 300;
     font-size: 18px;
-    padding-bottom: 50px
+    padding-bottom: 5px
 }
 
 h6 {
     font-family: "Libre Franklin Thin", sans-serif;
     font-weight: 500;
     font-size: 18px;
-    margin: 0px 82.5px;
+    margin: 0px 84.5px;
     padding-bottom: 20px
 }
 
 h7 {
     font-family: "Libre Franklin Thin", sans-serif;
-    font-size: 14px;
-    margin: 0px 82.5px;
+    font-size: 15.5px;
+    font-weight: 100;
+    margin: 0px 84.5px;
     padding-bottom: 10px
+}
+
+h8 {
+    font-family: "Libre Franklin Thin", sans-serif;
+    text-align: center;
+    font-weight: 100;
+    /* padding-left: 200px; */
+    font-size: 12px;
 }
 
 .content-container {
@@ -40,6 +49,20 @@ h7 {
     margin: 0 auto;
 }
 
+.sub-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center
+}
+
 .chart-source {
     font-family: "Libre Franklin Thin"
+}
+
+.small-spacer {
+    height: 50px;
+}
+
+.med-spacer {
+    height: 75px;
 }
