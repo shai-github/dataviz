@@ -47,7 +47,8 @@ function bubbleChart() {
   var fillColor = d3
     .scaleOrdinal()
     .domain([3, 2, 1])
-    .range(['#07286f', '#ce2c6b', '#ffa600']);
+    .range(['#3b4994', '#be64ac', '#5ac8c8']);
+    // .range(['#07286f', '#ce2c6b', '#ffa600']);
 
   function createNodes(rawData) {
     console.log(rawData);
