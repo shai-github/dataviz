@@ -97,9 +97,13 @@ d3.json("data/tree.json", function(data) {
             .append("xhtml:div")
             .attr("dy", ".75em")
             .html(function (d) {
+                var fontStyle = '';
+                if(d.data.name == "City Three") {
+                    fontStyle = ' style="color:white;"';
+                }
                 return '' +
-                    '<p class="title"> ' + d.data.name + '</p>' +
-                    '<p>' + formatNumber(d.value) + '</p>'
+                    '<p class="title" ' + fontStyle + '>' + d.data.name + '</p>' +
+                    '<p' + fontStyle + '>' + formatNumber(d.value) + '</p>'
                 ;
             })
             .attr("class", "textdiv"); 

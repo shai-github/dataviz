@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="css/bars.css" />
         <link rel="stylesheet" href="css/scrolly.css" />
         <link rel="stylesheet" href="css/tree.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/bubble.css" />
     
         <script src="//d3js.org/d3.v4.min.js"></script>
     </head>
@@ -125,6 +127,31 @@
                 <div id="tree"></div>
             </div>
         </section>
+        <section class='filler'>
+            <div class="spacer"></div>
+        </section>
+        <section>
+            <div class="container">
+                <header class="flex"></header>
+                <h4>Switch Time Period</h4>
+                <div id="toolbar">
+                    <ul class="bub-legend">
+                        <li><span class="thirdblock"></span> <b>City 3</b> (14% White)</li>
+                        <li><span class="secondblock"></span>  <b>City 2</b> (42% White)</li>
+                        <li><span class="firstblock"></span>  <b>City 1</b> (64% White)</li>
+                    </ul>
+                    <a id="all" class="button active">All</a>
+                    <a id="1970" class="button">1970</a>
+                    <a id="1980" class="button">1980</a>
+                    <a id="1990" class="button">1990</a>
+                    <a id="2000" class="button">2000</a>
+                    <a id="2010" class="button">2010</a>
+                    <a id="2016" class="button">2016</a>
+                    <br></br>
+                    <br></br>
+                </div>
+                <div id="vis"></div>
+        </section>
 
     </body>
 
@@ -132,6 +159,8 @@
     <script src="scripts/bars.js"></script>
     <script src="scripts/scrolly.js"></script>
     <script src="scripts/tree.js"></script>
+    <script src="scripts/tooltip.js"></script>
+    <script src="scripts/bubble.js"></script>
 
     <script>
         enterView({
