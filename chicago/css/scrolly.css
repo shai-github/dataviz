@@ -94,7 +94,8 @@ img {
     padding: 1rem;
     text-align: left;
     font-family: 'Libre Franklin Thin', sans-serif;
-    font-size: 20px;
+    font-weight: 100;
+    font-size: 15.5px;
     background-color: #fff;
     transition: background-color 250ms ease-in-out;
     color: #000;
