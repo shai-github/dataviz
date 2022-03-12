@@ -16,8 +16,8 @@ h5 {
 }
 
 h6 {
-    font-family: "Libre Franklin Thin", sans-serif;
-    font-weight: 500;
+    font-family: "Lora", sans-serif;
+    font-weight: bolder;
     font-size: 18px;
     margin: 0px 84.5px 0px;
     padding-bottom: 18px
@@ -54,14 +54,19 @@ h8 {
     text-align: center
 }
 
-.chart-source {
-    font-family: "Libre Franklin Thin"
-}
-
 .small-spacer {
     height: 30px;
 }
 
 .med-spacer {
-    height: 75px;
+    height: 70px;
+}
+
+.source {
+    font-family: "Libre Franklin Thin", sans-serf;
+    font-size: 12px;
+    text-align:left;
+    margin: 0px 84.5px;
+    padding-top: 10px;
+    color: rgba(0, 0, 0, 0.4)
 }
