@@ -1,0 +1,68 @@
+.bars-bar {
+    fill: black;
+}
+
+.bars-axis {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.bars-axis path {
+    display: none;
+}
+
+.bars-tick line{
+    visibility: hidden;
+}
+
+.bars-barLabel {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    fill: white
+}
+
+.bars-barLabelB {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    fill: black
+}
+
+.bars-legend { 
+    list-style: none; 
+    margin: 0px 664px 0px 0px;
+    padding-bottom: 25px
+}
+
+.bars-legend li { 
+    float: right; 
+    margin-right: 8px;
+    font-family: 'Libre Franklin Light', sans-serif;
+    font-weight: lighter;
+    font-size: 12.5px;
+    display: inline;
+}
+
+.bars-legend span { 
+    float: left; 
+    width: 12px; 
+    height: 12px; 
+    margin: 0.5px 2.5px; 
+}
+
+.bars-legend .fifthblock { 
+    background-color: #ffa600; 
+    border: 1px solid #000;
+}
+
+.bars-legend .fourthblock { 
+    background-color: #928A97; 
+    border: 1px solid #000;
+}
+
+.bars-legend .thirdblock {
+    background-color: #003f5c; 
+    border: 1px solid #000;
+}

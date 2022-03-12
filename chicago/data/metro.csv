@@ -1,0 +1,109 @@
+year,income,city,value
+2000,low,Akron,19.9
+2014,low,Akron,24.5
+2000,middle,Akron,59.8
+2014,middle,Akron,54.6
+2000,high,Akron,20.3
+2014,high,Akron,20.9
+2000,low,Bloomington,19.6
+2014,low,Bloomington,24.5
+2000,middle,Bloomington,58.1
+2014,middle,Bloomington,50.2
+2000,high,Bloomington,22.3
+2014,high,Bloomington,25.3
+2000,low,Canton,22.4
+2014,low,Canton,25.3
+2000,middle,Canton,62.3
+2014,middle,Canton,58.6
+2000,high,Canton,15.3
+2014,high,Canton,16.2
+2000,low,Champaign,28.6
+2014,low,Champaign,35.9
+2000,middle,Champaign,53.5
+2014,middle,Champaign,44.4
+2000,high,Champaign,17.9
+2014,high,Champaign,19.7
+2000,low,Chicago,23.6
+2014,low,Chicago,27.4
+2000,middle,Chicago,56.3
+2014,middle,Chicago,51.1
+2000,high,Chicago,20.2
+2014,high,Chicago,21.5
+2000,low,Cincinnati,20.9
+2014,low,Cincinnati,22.6
+2000,middle,Cincinnati,58
+2014,middle,Cincinnati,52.3
+2000,high,Cincinnati,21
+2014,high,Cincinnati,25.2
+2000,low,Cleveland,21
+2014,low,Cleveland,25.5
+2000,middle,Cleveland,56.9
+2014,middle,Cleveland,52.3
+2000,high,Cleveland,22.2
+2014,high,Cleveland,22.3
+2000,low,Columbus,20.6
+2014,low,Columbus,23.6
+2000,middle,Columbus,58.3
+2014,middle,Columbus,51.6
+2000,high,Columbus,21.1
+2014,high,Columbus,24.9
+2000,low,Detroit,21.2
+2014,low,Detroit,28.1
+2000,middle,Detroit,55.1
+2014,middle,Detroit,51.4
+2000,high,Detroit,23.8
+2014,high,Detroit,20.5
+2000,low,Grand Rapids,18
+2014,low,Grand Rapids,24.8
+2000,middle,Grand Rapids,62.8
+2014,middle,Grand Rapids,56.8
+2000,high,Grand Rapids,19.2
+2014,high,Grand Rapids,18.4
+2000,low,Indianapolis,19.9
+2014,low,Indianapolis,24.4
+2000,middle,Indianapolis,58.9
+2014,middle,Indianapolis,54.8
+2000,high,Indianapolis,21.2
+2014,high,Indianapolis,20.8
+2000,low,Kalamazoo,24.5
+2014,low,Kalamazoo,31
+2000,middle,Kalamazoo,58.3
+2014,middle,Kalamazoo,52.5
+2000,high,Kalamazoo,17.2
+2014,high,Kalamazoo,16.5
+2000,low,Kansas City,18.5
+2014,low,Kansas City,23
+2000,middle,Kansas City,58.9
+2014,middle,Kansas City,54.8
+2000,high,Kansas City,22.6
+2014,high,Kansas City,22.2
+2000,low,Michigan City,18.3
+2014,low,Michigan City,27.1
+2000,middle,Michigan City,63.2
+2014,middle,Michigan City,57
+2000,high,Michigan City,18.6
+2014,high,Michigan City,15.9
+2000,low,Milwaukee,19.8
+2014,low,Milwaukee,25.5
+2000,middle,Milwaukee,58.9
+2014,middle,Milwaukee,52.6
+2000,high,Milwaukee,21.3
+2014,high,Milwaukee,22
+2000,low,Minneapolis,16.4
+2014,low,Minneapolis,20.1
+2000,middle,Minneapolis,61
+2014,middle,Minneapolis,54.6
+2000,high,Minneapolis,22.6
+2014,high,Minneapolis,25.4
+2000,low,Springfield,20.6
+2014,low,Springfield,24.8
+2000,middle,Springfield,60.9
+2014,middle,Springfield,49.3
+2000,high,Springfield,18.5
+2014,high,Springfield,25.9
+2000,low,St. Louis,19.1
+2014,low,St. Louis,22.5
+2000,middle,St. Louis,57.7
+2014,middle,St. Louis,52.8
+2000,high,St. Louis,23.2
+2014,high,St. Louis,24.7

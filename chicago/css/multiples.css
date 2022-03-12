@@ -1,0 +1,46 @@
+.chart-container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.multiples-cityTitle {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-weight: 500;
+    fill: #000;
+    font-size: 14px;
+}
+
+.multiples-yearAxis {
+    font-family: "Libre Franklin Thin", sans-serif;
+    fill: #000;
+    font-size: 10px;
+}
+
+.multiples-lineLow {
+    fill: none;
+    stroke: #283C63;
+    stroke-width: 3px;
+}
+
+.multiples-lineMid {
+    fill: none;
+    stroke: #928A97;
+    stroke-width: 3px;
+}
+
+.multiples-lineHigh {
+    fill: none;
+    stroke: #ffa600;
+    stroke-width: 3px;
+}
+
+.multiples-area {
+    fill: #e8eef4;
+}
+
+g#xAxisG text, g#yAxisG text {
+    font-family: "Libre Franklin Thin", sans-serif;
+    stroke: none;
+    fill: black;
+    font-size: 8px;
+}
