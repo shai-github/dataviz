@@ -11,7 +11,28 @@ h5 {
     font-family: "Libre Franklin Thin", sans-serif;
     text-align: center;
     font-weight: 300;
-    font-size: 18px
+    font-size: 18px;
+    padding-bottom: 50px
+}
+
+h6 {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0px 82.5px;
+    padding-bottom: 20px
+}
+
+h7 {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-size: 14px;
+    margin: 0px 82.5px;
+    padding-bottom: 10px
+}
+
+.content-container {
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
 .title-container {
@@ -19,22 +40,6 @@ h5 {
     margin: 0 auto;
 }
 
-.multiples-source {
-    font-family: "Libre Franklin Thin"
-}
-
-.bars-source {
-    font-family: "Libre Franklin Thin"
-}
-
-.map-source {
-    font-family: "Libre Franklin Thin"
-}
-
-.tree-source {
-    font-family: "Libre Franklin Thin"
-}
-
-.bubble-source {
+.chart-source {
     font-family: "Libre Franklin Thin"
 }
