@@ -1,0 +1,86 @@
+text {
+    font-family: "Libre Franklin", sans-serif;
+    pointer-events: none;
+}
+
+.grandparent text {
+    font-family: "Libre Franklin", sans-serif;
+}
+
+rect {
+    stroke: #fff;
+    stroke-width: 1px;
+}
+
+rect.parent,
+    .grandparent rect {
+    stroke-width: 3px;
+}
+
+.grandparent:hover rect {
+    fill: black;
+}
+
+.grandparent:hover text {
+    fill: white;
+}
+
+.children rect.parent,
+    .grandparent rect {
+    cursor: pointer;
+}
+
+.children rect.child {
+    opacity: 0;
+}
+
+.children:hover rect.child {
+    opacity: 1;
+    stroke-width: 1px;
+}
+
+.children:hover rect.parent {
+    opacity: 0;
+}
+
+.tree-legend {
+    margin-bottom: 8px !important;
+}
+
+.tree-legend rect {
+    stroke-width: 0px;
+}
+
+.tree-legend text {
+    text-anchor: middle;
+    pointer-events: auto;
+    font-size: 13px;
+    font-family: sans-serif;
+    fill: black;
+}
+
+.form-group {
+    text-align:left;
+}
+
+.textdiv {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    overflow:none;
+}
+
+.textdiv .title {
+    font-size: 102%;
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 18px !important;
+}
+
+.textdiv p {
+    line-height: 24px;
+    margin:10px 10px 4px !important;
+    padding:0px;
+    font-size:16px !important;
+}

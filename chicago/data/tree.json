@@ -1,0 +1,415 @@
+{
+    "name": "Populations by Race and Age",
+    "color": "#bbbbbb",
+    "children": [
+      {
+        "name": "City One",
+        "color": "#ffa600",
+        "children": [
+          {
+            "name": "White",
+            "color": "#ffb13e",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#ffb13e",
+                "value": 52243
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#ffbc61",
+                "value": 163133
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ffc780",
+                "value": 137702
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#ffd29f",
+                "value": 41036
+              }
+            ]
+          },
+          {
+            "name": "Black",
+            "color": "#ffbc61",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#ffb13e",
+                "value": 18680
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#ffbc61",
+                "value": 22354
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ffc780",
+                "value": 31945
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#ffd29f",
+                "value": 8441
+              }
+            ]
+          },
+          {
+            "name": "Asian",
+            "color": "#ffc780",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#ffb13e",
+                "value": 11472
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#ffbc61",
+                "value": 26514
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ffc780",
+                "value": 14300
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#ffd29f",
+                "value": 313
+              }
+            ]
+          },
+          {
+            "name": "Latinx",
+            "color": "#ffd29f",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#ffb13e",
+                "value": 20800
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#ffbc61",
+                "value": 24943
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ffc780",
+                "value": 37482
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#ffd29f",
+                "value": 4120
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "color": "#fbddbe",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#ffb13e",
+                "value": 1341
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#ffbc61",
+                "value": 1672
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ffc780",
+                "value": 2807
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#ffd29f",
+                "value": 801
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "City Two",
+        "color": "#ce2c6b",
+        "children": [
+          {
+            "name": "White",
+            "color": "#da5583",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#da5583",
+                "value": 50450
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#e5769a",
+                "value": 72453
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ef95b2",
+                "value": 162735
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#f7b3c9",
+                "value": 40450
+              }
+            ]
+          },
+          {
+            "name": "Black",
+            "color": "#e5769a",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#da5583",
+                "value": 47240
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#e5769a",
+                "value": 49840
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ef95b2",
+                "value": 62504
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#f7b3c9",
+                "value": 26288
+              }
+            ]
+          },
+          {
+            "name": "Asian",
+            "color": "#ef95b2",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#da5583",
+                "value": 25322
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#e5769a",
+                "value": 13372
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ef95b2",
+                "value": 10870
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#f7b3c9",
+                "value": 7084
+              }
+            ]
+          },
+          {
+            "name": "Latinx",
+            "color": "#f7b3c9",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#da5583",
+                "value": 48378
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#e5769a",
+                "value": 52750
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ef95b2",
+                "value": 65525
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#f7b3c9",
+                "value": 27313
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "color": "#ffd1e0",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#da5583",
+                "value": 1760
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#e5769a",
+                "value": 1910
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#ef95b2",
+                "value": 3021
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#f7b3c9",
+                "value": 1012
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "City Three",
+        "color": "#07286f",
+        "children": [
+          {
+            "name": "White",
+            "color": "#40488b",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#40488b",
+                "value": 27592
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#686aa7",
+                "value": 49943
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#8f8fc4",
+                "value": 71034
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#b7b5e1",
+                "value": 36607
+              }
+            ]
+          },
+          {
+            "name": "Black",
+            "color": "#686aa7",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#40488b",
+                "value": 161612
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#686aa7",
+                "value": 121043
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#8f8fc4",
+                "value": 213314
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#b7b5e1",
+                "value": 77990
+              }
+            ]
+          },
+          {
+            "name": "Asian",
+            "color": "#8f8fc4",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#40488b",
+                "value": 11825
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#686aa7",
+                "value": 11713
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#8f8fc4",
+                "value": 22075
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#b7b5e1",
+                "value": 6101
+              }
+            ]
+          },
+          {
+            "name": "Latinx",
+            "color": "#b7b5e1",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#40488b",
+                "value": 189204
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#686aa7",
+                "value": 120631
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#8f8fc4",
+                "value": 179794
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#b7b5e1",
+                "value": 30506
+              }
+            ]
+          },
+          {
+            "name": "Other",
+            "color": "#dfddff",
+            "children": [
+              {
+                "name": "Ages 0 to 19",
+                "color": "#40488b",
+                "value": 3942
+              },
+              {
+                "name": "Ages 20 to 34",
+                "color": "#686aa7",
+                "value": 3475
+              },
+              {
+                "name": "Ages 35 to 64",
+                "color": "#8f8fc4",
+                "value": 4825
+              },
+              {
+                "name": "Ages 65 and Over",
+                "color": "#b7b5e1",
+                "value": 1525
+              }
+            ]
+          }
+        ]
+      }
+      
+    ]
+}

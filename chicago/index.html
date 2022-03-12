@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/multiples.css" />
         <link rel="stylesheet" href="css/bars.css" />
         <link rel="stylesheet" href="css/scrolly.css" />
+        <link rel="stylesheet" href="css/tree.css" />
     
         <script src="//d3js.org/d3.v4.min.js"></script>
     </head>
@@ -116,11 +117,22 @@
                 </article>
             </div>
         </section>
+        <section class='filler'>
+            <div class="spacer"></div>
+        </section>
+        <section>
+            <div class="chart-container">
+                <div id="tree"></div>
+            </div>
+        </section>
+
     </body>
 
     <script src="scripts/multiples.js"></script>
     <script src="scripts/bars.js"></script>
     <script src="scripts/scrolly.js"></script>
+    <script src="scripts/tree.js"></script>
+
     <script>
         enterView({
             selector: '.step',
