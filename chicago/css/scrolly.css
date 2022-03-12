@@ -174,3 +174,40 @@ img {
     background-color: #283c63;  
     border: 1px solid #000;
 }
+
+.city-legend { 
+    list-style: none; 
+    margin: 0px 706px 0px 0px;
+    padding-bottom: 50px
+}
+
+.city-legend li { 
+    float: right; 
+    margin-right: 8px;
+    font-family: 'Libre Franklin Light', sans-serif;
+    font-weight: lighter;
+    font-size: 12.5px;
+    display: inline;
+}
+
+.city-legend span { 
+    float: left; 
+    width: 12px; 
+    height: 12px; 
+    margin: 0.5px 2.5px; 
+}
+
+.city-legend .citythree {
+    background-color: #07286f; 
+    border: 1px solid #000;
+}
+
+.city-legend .citytwo { 
+    background-color: #ce2c6b; 
+    border: 1px solid #000;
+}
+
+.city-legend .cityone { 
+    background-color: #ffa600;  
+    border: 1px solid #000;
+}
