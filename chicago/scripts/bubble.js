@@ -54,7 +54,7 @@ function bubbleChart() {
     console.log(rawData);
 
     var maxAmount = d3.max(rawData, function (d) {
-      return +d.AF2LE001;
+      return +d.AF2ME001;
     });
 
     var radiusScale = d3
@@ -66,8 +66,12 @@ function bubbleChart() {
     var myNodes = rawData.map(function (d) {
       return {
         id: d.id,
-        radius: radiusScale(+d.AF2LE001),
-        value: +d.AF2LE001,
+        radius: radiusScale(+d.AF2ME001),
+        value: +d.AF2ME001,
+        white: d.AF2ME002,
+        black: d.AF2ME003,
+        asian: d.AF2ME005,
+        other: d.AF2ME007,
         name: d.TRACTA,
         group: d.THREECITY,
         1970: d.INC1970,
@@ -193,8 +197,20 @@ function bubbleChart() {
       '<span class="name">Census Tract: </span><span class="value">' +
       d.name +
       '</span><br/>' +
-      '<span class="name">Population: </span><span class="value">' +
+      '<span class="name">Total Population: </span><span class="value">' +
       addCommas(d.value) +
+      '</span><br/>' +
+      '<span class="name">White Population: </span><span class="value">' +
+      addCommas(d.white) +
+      '</span><br/>' +
+      '<span class="name">Black Population: </span><span class="value">' +
+      addCommas(d.black) +
+      '</span><br/>' +
+      '<span class="name">Asian Population: </span><span class="value">' +
+      addCommas(d.asian) +
+      '</span><br/>' +
+      '<span class="name">Other Population: </span><span class="value">' +
+      addCommas(d.other) +
       '</span><br/>';
 
     tooltip.showTooltip(content, d3.event);
