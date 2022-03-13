@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="css/multiples.css" />
         <link rel="stylesheet" href="css/bars.css" />
         <link rel="stylesheet" href="css/scrolly.css" />
+        <link rel="stylesheet" href="css/scrolly2.css" />
         <link rel="stylesheet" href="css/tree.css" />
         <link rel="stylesheet" href="css/reset.css" />
         <link rel="stylesheet" href="css/bubble.css" />
@@ -137,16 +138,16 @@
                             <li><span class="secondblock"></span> Low</li>
                             <li><span class="firstblock"></span> Very Low</li>
                         </ul>
-                        <img id="1970svg" src="svg/1970.svg">
-                        <img id="1980svg" src="svg/1980.svg">
-                        <img id="1990svg" src="svg/1990.svg">
-                        <img id="2000svg" src="svg/2000.svg">
-                        <img id="2010svg" src="svg/2010.svg">
-                        <img id="2016svg" src="svg/2016.svg">
+                        <img id="1970svg" src="svg/1970.svg" index="0">
+                        <img id="1980svg" src="svg/1980.svg" index="1">
+                        <img id="1990svg" src="svg/1990.svg" index="2">
+                        <img id="2000svg" src="svg/2000.svg" index="3">
+                        <img id="2010svg" src="svg/2010.svg" index="4">
+                        <img id="2016svg" src="svg/2016.svg" index="5">
                     </div>
                 </figure>
     
-                <article>
+                <article id='scrollyarticle'>
                     <div id='1970.svg' class='step' data-width='10%' data-index='0'>
                         <div class="frame">
                             <p style="font-family: 'Lora', sans-serif;font-size: 18.5px">
@@ -237,7 +238,7 @@
             </p>
             <div class="small-spacer"></div>
         </div>
-        <section id='scrolly-overlay'>
+        <section id='scrolly-overlay2'>
 
             <div class='scrolly'>
     
@@ -248,14 +249,14 @@
                             <li><span class="citytwo"></span> City Two</li>
                             <li><span class="cityone"></span> City One</li>
                         </ul>
-                        <img id="city0svg" src="svg/city0.svg">
-                        <img id="city1svg" src="svg/city1.svg">
-                        <img id="city2svg" src="svg/city2.svg">
-                        <img id="city3svg" src="svg/city3.svg">
+                        <img id="city0svg" src="svg/city0.svg" index="0">
+                        <img id="city1svg" src="svg/city1.svg" index="1">
+                        <img id="city2svg" src="svg/city2.svg" index="2">
+                        <img id="city3svg" src="svg/city3.svg" index="3">
                     </div>
                 </figure>
     
-                <article>
+                <article id="scrollyarticle2">
                     <div id='city0svg' class='step' data-width='10%' data-index='0'>
                         <div class="frame">
                             <p style="font-family: 'Lora', sans-serif;font-size: 18.5px">
@@ -344,17 +345,32 @@
     <script src="scripts/bubble.js"></script>
 
     <script>
+        function hideAllSvgs(svgElements) {
+            for (i=0; i<svgElements.length; i++) {
+                svgElement = svgElements[i];
+                svgElement.style.cssText = "visibility: hidden; opacity: 0; transition: visibility 0.5s, opacity 0.5s linear; position: absolute;";
+            }
+        }
+
         enterView({
             selector: '.step',
             enter: function(el) {
-                svgElements = document.getElementById('scrolly-overlay').getElementsByTagName('img');
-                for (i=0; i<svgElements.length; i++) {
-                    svgElement = svgElements[i];
-                    svgElement.style.cssText = "visibility: hidden; opacity: 0; transition: visibility 0.5s, opacity 0.5s linear; position: absolute;";
-                }
+                overlayId = el.parentElement.parentElement.parentElement.id;
+                svgElements = document.getElementById(overlayId).getElementsByTagName('img');
+                hideAllSvgs(svgElements);
 
-                visibleSvg = document.getElementById(el.id.replaceAll('.', ''));
+                visibleSvg = svgElements.item(el.getAttribute("data-index"));
                 visibleSvg.style.cssText = "visibility: visible; opacity: 1;";
+            },
+            exit: function(el) {
+                overlayId = el.parentElement.parentElement.parentElement.id;
+                svgElements = document.getElementById(overlayId).getElementsByTagName('img');
+                hideAllSvgs(svgElements);
+
+                idToShow = Math.max(0, el.getAttribute("data-index") - 1);
+                visibleSvg = svgElements.item(idToShow);
+                visibleSvg.style.cssText = "visibility: visible; opacity: 1;";
+
             },
         offset: 0.5
         });

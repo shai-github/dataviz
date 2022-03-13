@@ -1,0 +1,218 @@
+svg {
+    overflow: visible;
+}
+
+h3 {
+    font-family: "Libre Franklin Thin", sans-serif;
+    font-size: 18px;
+    padding-bottom: 8px;
+    font-weight: 500;
+    padding-left: 55px
+}
+
+img {
+    width: 50%;
+    padding-left: 15px
+}
+
+.frame {
+    margin-left: 15rem;
+    width: 500px;
+    height: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    text-align: left;
+    transition: background-color 250ms ease-in-out;
+}
+
+.frame p {
+    display: inline-block;
+    text-align: justify;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.filler {
+    height: 8rem;
+    text-align: center;
+}
+
+.filler h2 {
+    font-family: 'Lora', sans-serif;
+    font-weight: 500;
+    font-size: 38.5px;
+}
+
+.filler p {
+    font-family: 'Libre Franklin Thin', sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: left;
+    margin: 10px auto;
+    line-height: 1.2;
+    max-width: 700px
+
+}
+
+#scrolly-overlay2 .scrolly {
+    font-family: 'Libre Franklin Light', sans-serif;
+    font-size: 22px;
+    max-width: 62rem;
+    margin: 1rem auto;
+    padding: 0rem;
+    position: relative;
+
+}
+
+#scrolly-overlay2 .scrolly article {
+    padding: 0;
+    max-width: 30rem;
+    margin: 0 auto;
+    position: relative
+}
+
+#scrolly-overlay2 .scrolly article .step {
+    min-height: 93vh;
+    margin-bottom: 0rem;
+}
+
+#scrolly-overlay2 .scrolly article .step:last-of-type {
+    margin-bottom: 0;
+}
+
+#scrolly-overlay2 .scrolly article .step.is-active p {
+    background-color: #1F1F1E;
+}
+
+#scrolly-overlay2 .scrolly article .step p {
+    margin: 0;
+    padding: 1rem;
+    text-align: left;
+    font-family: 'Libre Franklin Thin', sans-serif;
+    font-weight: 100;
+    font-size: 15.5px;
+    background-color: #fff;
+    transition: background-color 250ms ease-in-out;
+    color: #000;
+}
+
+#scrolly-overlay2 .scrolly figure.sticky {
+    position: sticky;
+    width: 100%;
+    height:90vh;
+    margin: 0;
+    top: 6vh;
+
+    left: 0;
+}
+
+#scrolly-overlay2 .scrolly figure.sticky .svg-chart {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    transition: width 1s ease-in-out;
+}
+
+#scrolly-overlay2 .sticky img {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+    position: absolute;
+}
+
+.spacer {
+    height: 200px;
+}
+
+.legend { 
+    list-style: none; 
+    margin: 0px 611.5px 0px 0px;
+    padding-bottom: 50px
+}
+
+.legend li { 
+    float: right; 
+    margin-right: 8px;
+    font-family: 'Libre Franklin Light', sans-serif;
+    font-weight: lighter;
+    font-size: 12.5px;
+    display: inline;
+}
+
+.legend span { 
+    float: left; 
+    width: 12px; 
+    height: 12px; 
+    margin: 0.5px 2.5px; 
+}
+
+.legend .fifthblock { 
+    background-color: #ffa600; 
+    border: 1px solid #000;
+}
+
+.legend .fourthblock { 
+    background-color: #ffcb8a; 
+    border: 1px solid #000;
+}
+
+.legend .thirdblock {
+    background-color: #f1f1f1; 
+    border: 1px solid #000;
+}
+
+.legend .secondblock { 
+    background-color: #8a91a7; 
+    border: 1px solid #000;
+}
+
+.legend .firstblock { 
+    background-color: #283c63;  
+    border: 1px solid #000;
+}
+
+.city-legend { 
+    list-style: none; 
+    margin: 0px 706px 0px 0px;
+    padding-bottom: 50px
+}
+
+.city-legend li { 
+    float: right; 
+    margin-right: 8px;
+    font-family: 'Libre Franklin Light', sans-serif;
+    font-weight: lighter;
+    font-size: 12.5px;
+    display: inline;
+}
+
+.city-legend span { 
+    float: left; 
+    width: 12px; 
+    height: 12px; 
+    margin: 0.5px 2.5px; 
+}
+
+.city-legend .citythree {
+    background-color: #3b4994; 
+    border: 1px solid #000;
+}
+
+.city-legend .citytwo { 
+    background-color: #be64ac; 
+    border: 1px solid #000;
+}
+
+.city-legend .cityone { 
+    background-color: #5ac8c8;  
+    border: 1px solid #000;
+}
+
+mini-spacer {
+    height: 2px
+}
