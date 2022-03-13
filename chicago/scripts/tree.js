@@ -1,7 +1,7 @@
 var el_id = 'tree';
 var obj = document.getElementById(el_id);
 // var divWidth = obj.offsetWidth;
-var divWidth = 1050;
+var divWidth = 920;
 var tmargin = {top: 40, right: 20, bottom: 00, left: 20},
     twidth = divWidth - 25,
     theight = 600 - tmargin.top - tmargin.bottom,
